@@ -1,0 +1,22 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "ShopSQL Local",
+            "database": "shop",
+            "username": "root",
+            "password": "jh7dd7hj",
+            "connectionTimeout": 30
+        }
+    ],
+    "dataworkspace.excludedProjects": [
+        "shop/shop.sqlproj"
+    ]
+}

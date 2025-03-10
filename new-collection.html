@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defile - Інтернет-магазин жіночого одягу</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Верхня навігаційна панель -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.jpg" alt="DEFILE Logo" /> </a>
+        </div>
+        <nav>
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html">Каталог</a>
+              <ul class="dropdown">
+                <div class="dropdown-columns">
+                  <div class="column">
+                    <li><a href="#">Футболки</a></li>
+                    <li><a href="#">Топи і майки</a></li>
+                    <li><a href="#">Сорочки</a></li>
+                    <li><a href="#">Гольфи та водолази</a></li>
+                    <li><a href="#">Лонгсліви</a></li>
+                    <li><a href="#">Сфетри та кардигани</a></li>
+                    <li><a href="#">Батніки та свідшоти</a></li>
+                    <li><a href="#">Шорти</a></li>
+                  </div>
+                  <div class="column">
+                    <li><a href="#">Штани</a></li>
+                    <li><a href="#">Джинси</a></li>
+                    <li><a href="#">Спідниці</a></li>
+                    <li><a href="#">Сукні</a></li>
+                    <li><a href="#">Піджаки</a></li>
+                    <li><a href="#">Спортивні костюми</a></li>
+                    <li><a href="#">Костюми</a></li>
+                    <li><a href="#">Шкарпетки</a></li>
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li><a href="new-collection.html">Нова колекція</a></li>
+            <li><a href="#">Топ продаж</a></li>
+            <li><a href="#">Знижки</a></li>
+            <li>
+              <a href="#">Інфо</a>
+              <ul class="dropdown">
+                <li><a href="delivery.html">Оплата і доставка</a></li>
+                <li><a href="order-process.html">Як оформити замовлення</a></li>
+                <li><a href="exchange-return.html">Обмін і повернення</a></li>
+                <li><a href="shops.html">Магазини</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-icons">
+          <a href="#" id="user-icon"><i class="fas fa-user"></i></a>
+          <button id="toggle-filters"> <i class="fas fa-search"></i> </button>
+          <a href="favorites.html"><i class="fas fa-heart"></i></a>
+          <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Форма реєстрації -->
+    <div id="registration-form" class="modal hidden" aria-hidden="true">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Реєстрація</h2>
+        <form>
+          <label for="name">Ім'я:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Електронна пошта:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required />
+
+          <label for="confirm-password">Підтвердження пароля:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          />
+
+          <button type="submit">Зареєструватися</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Пошук -->
+
+    <aside id="filters" class="filters">
+      <h2>Фільтри</h2>
+      <label for="name-search">Пошук за назвою:</label>
+      <input type="text" id="name-search" placeholder="Введіть назву товару..." />
+      
+      <label for="color-filter">Колір:</label>
+      <select id="color-filter">
+        <option value="">Всі</option>
+        <option value="Червоний">Червоний</option>
+        <option value="Синій">Синій</option>
+        <option value="Зелений">Зелений</option>
+      </select>
+      
+      <label for="size-filter">Розмір:</label>
+      <select id="size-filter">
+        <option value="">Всі</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      
+      <label for="price-filter">Ціна:</label>
+      <input type="number" id="price-filter" placeholder="Макс. ціна (грн)" />
+      
+      <button id="apply-filters">Застосувати фільтри</button>
+    </aside>
+
+    <!-- Товар -->
+    <section class="products new_collection">
+      <!--
+      <div class="product-card">
+        <img src="images/news1.jpg" alt="Фото товару" class="product-image" />
+        <h3 class="product-title">Назва товару</h3>
+        <div class="product-options">
+          <select class="product-colors">
+            <option>Червоний</option>
+            <option>Синій</option>
+            <option>Зелений</option>
+          </select>
+          <select class="product-sizes">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+        </div>
+        <div class="product-info">
+          <span class="product-price">500 грн</span>
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+            <i class="fas fa-heart"></i>
+          </button>
+          <button class="add-to-cart-btn">До кошику</button>
+        </div>
+      </div>
+    -->
+    </section>
+
+    <!-- Футер -->
+    <footer>
+      <div class="footer-container">
+        <p>&copy; 2024 DEFILE. Усі права захищені.</p>
+        <p>Ми у соцмережах:</p>
+        <p>
+          <a href="#">Facebook</a> |
+          <a href="#">Instagram</a>
+        </p>
+        <p>Способи зв'язку:</p>
+        <p>Телефон: +380 97 966 3834</p>
+        <p>Email: info@defile.com</p>
+      </div>
+    </footer>
+  </body>
+  
+  <script src="script.js"></script>
+</html>

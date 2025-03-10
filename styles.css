@@ -1,0 +1,501 @@
+/* Скидання базових стилів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Загальні стилі */
+  body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Висота сторінки дорівнює висоті вікна */
+  }
+  
+  /* Основний контейнер */
+  body > *:not(header):not(footer) {
+    flex: 1; /* Гнучке заповнення простору */
+  }
+  
+  
+  /* Заголовок */
+  header {
+    flex: 0;
+    background-color: #fff;
+    padding: 15px 30px;
+    border-bottom: 2px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Щоб заголовок залишався над іншим контентом */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Додаємо тінь для більшої виразності */
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    margin-right: auto;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .logo h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Навігація */
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-menu > li {
+    position: relative;
+  }
+  
+  .nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav-menu li a:hover {
+    color: red;
+  }
+  
+  /* Випадаюче меню */
+  .nav-menu .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    width: 400px;
+  }
+  
+  .nav-menu li:hover .dropdown {
+    display: block;
+  }
+  
+  .dropdown-columns {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .column {
+    flex: 1;
+  }
+  
+  .dropdown li {
+    margin: 5px 0;
+  }
+  
+  .dropdown li a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .dropdown li a:hover {
+    color: red;
+  }
+  
+  /* Іконки */
+  .header-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-icons a {
+    margin-left: 20px;
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .header-icons a:hover {
+    color: red;
+  }
+
+  .header-icons button {
+    margin-left: 20px;
+    border: 0;
+    color: #333;
+    background-color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .header-icons button:hover {
+    color: red;
+  }
+  
+  /* Слайдер */
+  .slider-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slider-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .slider {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+  
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slide {
+    min-width: 300px;
+    margin-right: 20px;
+  }
+  
+  .slide img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  /* Нова колекція */
+
+  .new_collection {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* В одному рядку 5 товарів */
+    gap: 20px;
+    padding: 20px;
+    justify-items: start; /* Товари вирівняні по лівому краю */
+  }
+  
+  /* Товар */
+  .products {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* В одному рядку 5 товарів */
+  gap: 20px;
+  padding: 20px;
+  justify-items: start; /* Товари вирівняні по лівому краю */
+}
+
+.product-card {
+  background-color: #fff;
+  border: 0px solid #ddd;
+  border-radius: 8px;
+  width: 100%; /* Встановлюємо ширину на 100% для кожної картки товару */
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-title {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.product-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.product-colors,
+.product-sizes {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 48%;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-to-cart-btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #555;
+}
+
+  
+  /* Футер */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+  }
+  
+  .footer-container p,
+  .footer-container a {
+    margin: 10px 0;
+  }
+  
+  .footer-container a {
+    color: #ffd700;
+    text-decoration: none;
+  }
+  
+  .footer-container a:hover {
+    color: #fff;
+  }
+  
+  /* Модальне вікно */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .modal-content input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .modal-content button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: #555;
+  }
+  
+  /* Пошук */
+  .toggle-filters-btn {
+    position: fixed;
+    padding: 10px;
+    background-color: transparent; /* Прозорий фон */
+    color: black;
+    border: 0; /* Тонка рамка */
+    border-radius: 50%; /* Кругла форма */
+    cursor: pointer;
+    width: 50px; /* Ширина кнопки */
+    height: 50px; /* Висота кнопки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+  
+  .toggle-filters-btn svg {
+    fill: #333; /* Колір іконки */
+    width: 24px;
+    height: 24px;
+  }
+  
+  .toggle-filters-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Легке затемнення при наведенні */
+  }
+  
+  .toggle-filters-btn:focus {
+    outline: none; /* Прибрати контур при фокусі */
+  }
+  
+  /* Блок фільтрів прихований за замовчуванням */
+  .filters {
+    position: fixed;
+    right: -300px; /* З початку фільтри ховаються праворуч */
+    top: 200px;
+    bottom: 270px;
+    width: 250px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-left: 2px solid #ddd;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease; /* Анімація для плавного переходу */
+  }
+  
+  .filters h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .filters label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .filters input,
+  .filters select,
+  .filters button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .filters button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .filters button:hover {
+    background-color: #555;
+  }
+  
+  /* Коли фільтри активовані (показуються) */
+  .filters.active {
+    right: 0; /* Показати фільтри */
+  }
+
+.favorite-btn {
+  background: none;
+  border: 0;
+  color: gray;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+}
+
+.favorite-btn:hover {
+  color: red;
+}
+
+.favorite-btn.liked {
+  color: red; /* Серце стає червоним, коли додано клас 'liked' */
+}
+
+.favorite-btn:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .products {
+      grid-template-columns: 1fr; /* Одна колонка для мобільних пристроїв */
+  }
+
+  .filters {
+      width: 100%;
+      right: -100%; /* Налаштування для мобільної поведінки */
+  }
+}
+
+:root {
+  --primary-color: #333;
+  --secondary-color: red;
+  --bg-color: #f9f9f9;
+  --font-size-base: 20px;
+}
+
+body {
+  font-size: var(--font-size-base);
+  background-color: var(--bg-color);
+}
+
+.nav-menu li a:hover {
+  color: var(--secondary-color);
+}
